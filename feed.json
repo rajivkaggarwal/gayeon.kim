@@ -1,0 +1,13 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Gayeon.kim",
+    "description": "",
+    "home_page_url": "https://rajivkaggarwal.github.io/gayeon.kim",
+    "feed_url": "https://rajivkaggarwal.github.io/gayeon.kim/feed.json",
+    "user_comment": "",
+    "author": {
+        "name": "Rajiv"
+    },
+    "items": [
+    ]
+}
