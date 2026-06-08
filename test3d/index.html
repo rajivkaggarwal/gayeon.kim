@@ -1,7 +1,41 @@
-<!DOCTYPE html><html lang="en-gb"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>test3d - Gayeon.kim</title><meta name="description" content="a-scene { height: 500px; width: 100%; display: block; }"><meta name="generator" content="Publii Open-Source CMS for Static Site"><link rel="canonical" href="https://rajivkaggarwal.github.io/gayeon.kim/test3d/"><link rel="alternate" type="application/atom+xml" href="https://rajivkaggarwal.github.io/gayeon.kim/feed.xml" title="Gayeon.kim - RSS"><link rel="alternate" type="application/json" href="https://rajivkaggarwal.github.io/gayeon.kim/feed.json" title="Gayeon.kim - JSON"><meta property="og:title" content="test3d"><meta property="og:site_name" content="Gayeon.kim"><meta property="og:description" content="a-scene { height: 500px; width: 100%; display: block; }"><meta property="og:url" content="https://rajivkaggarwal.github.io/gayeon.kim/test3d/index.html"><meta property="og:type" content="article"><link rel="stylesheet" href="https://rajivkaggarwal.github.io/gayeon.kim/assets/css/style.css?v=a0ba884548820066dfadd8416036abba"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://rajivkaggarwal.github.io/gayeon.kim/test3d/index.html"},"headline":"test3d","datePublished":"2026-06-07T21:26-04:00","dateModified":"2026-06-07T21:26-04:00","description":"a-scene { height: 500px; width: 100%; display: block; }","author":{"@type":"Person","name":"Rajiv","url":"https://rajivkaggarwal.github.io/gayeon.kim/authors/rajiv/"},"publisher":{"@type":"Organization","name":"Rajiv"}}</script><noscript><style>img[loading] {
+<!DOCTYPE html><html lang="en-gb"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>test3d - Gayeon.kim</title><meta name="description" content="You wake up in a dark room. There is a red button and a blue button. Press Red Button Press Blue Button"><meta name="generator" content="Publii Open-Source CMS for Static Site"><link rel="canonical" href="https://rajivkaggarwal.github.io/gayeon.kim/test3d/"><link rel="alternate" type="application/atom+xml" href="https://rajivkaggarwal.github.io/gayeon.kim/feed.xml" title="Gayeon.kim - RSS"><link rel="alternate" type="application/json" href="https://rajivkaggarwal.github.io/gayeon.kim/feed.json" title="Gayeon.kim - JSON"><meta property="og:title" content="test3d"><meta property="og:site_name" content="Gayeon.kim"><meta property="og:description" content="You wake up in a dark room. There is a red button and a blue button. Press Red Button Press Blue Button"><meta property="og:url" content="https://rajivkaggarwal.github.io/gayeon.kim/test3d/index.html"><meta property="og:type" content="article"><link rel="stylesheet" href="https://rajivkaggarwal.github.io/gayeon.kim/assets/css/style.css?v=a0ba884548820066dfadd8416036abba"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://rajivkaggarwal.github.io/gayeon.kim/test3d/index.html"},"headline":"test3d","datePublished":"2026-06-07T21:26-04:00","dateModified":"2026-06-08T18:02-04:00","description":"You wake up in a dark room. There is a red button and a blue button. Press Red Button Press Blue Button","author":{"@type":"Person","name":"Rajiv","url":"https://rajivkaggarwal.github.io/gayeon.kim/authors/rajiv/"},"publisher":{"@type":"Organization","name":"Rajiv"}}</script><noscript><style>img[loading] {
                     opacity: 1;
-                }</style></noscript><script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script><script src="https://unpkg.com/@c-frame/aframe-particle-system-component@1.2.x/dist/aframe-particle-system-component.min.js"></script><script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.5.0/dist/aframe-extras.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fern-solutions/aframe-sky-background/dist/sky-background.umd.min.js"></script></head><body class="page-template"><div><script src="https://aframe.io"></script><a-scene embedded><a-box position="0 1.5 -3" color="#4CC3D9"></a-box><a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere><a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder><a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane><a-sky color="#ECECEC"></a-sky></a-scene><style>a-scene {
-    height: 500px;
-    width: 100%;
-    display: block;
-  }</style></div></body></html>
+                }</style></noscript><script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script><script src="https://unpkg.com/@c-frame/aframe-particle-system-component@1.2.x/dist/aframe-particle-system-component.min.js"></script><script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.5.0/dist/aframe-extras.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fern-solutions/aframe-sky-background/dist/sky-background.umd.min.js"></script></head><body class="page-template"><div><div style="text-align: center; background: #222; color: #fff; padding: 20px; border-radius: 8px; font-family: sans-serif;"><h2 id="game-text">You wake up in a dark room. There is a red button and a blue button.</h2><br><button id="btn1" onclick="chooseOption(1)" style="padding: 10px 20px; margin: 5px; font-size: 16px; cursor: pointer;">Press Red Button</button> <button id="btn2" onclick="chooseOption(2)" style="padding: 10px 20px; margin: 5px; font-size: 16px; cursor: pointer;">Press Blue Button</button></div><script>// This function runs whenever a button is clicked
+    function chooseOption(choice) {
+        const textElement = document.getElementById("game-text");
+        const button1 = document.getElementById("btn1");
+        const button2 = document.getElementById("btn2");
+
+        if (choice === 1) {
+            textElement.innerText = "The red button triggered an alarm! A secret door opens.";
+            button1.innerText = "Enter the door";
+            button2.innerText = "Stay put";
+            // Change what happens on the next click
+            button1.setAttribute("onclick", "finishGame('win')");
+            button2.setAttribute("onclick", "finishGame('lose')");
+        } else if (choice === 2) {
+            textElement.innerText = "The blue button flooded the room with confetti! You win!";
+            button1.style.display = "none";
+            button2.style.display = "none";
+        }
+    }
+
+    function finishGame(outcome) {
+        const textElement = document.getElementById("game-text");
+        if (outcome === 'win') {
+            textElement.innerText = "You escaped the room! Game Over - You Win!";
+        } else {
+            textElement.innerText = "You waited too long. Game Over!";
+        }
+        document.getElementById("btn1").style.display = "none";
+        document.getElementById("btn2").style.display = "none";
+    }
+
+    // Optional: Listening for the Spacebar to trigger an event
+    window.addEventListener("keydown", function(event) {
+        if (event.code === "Space") {
+            // Prevent spacebar from scrolling the webpage down
+            event.preventDefault(); 
+            document.getElementById("game-text").innerText = "You tapped the Spacebar! A hidden trapdoor shakes...";
+        }
+    });</script></div></body></html>

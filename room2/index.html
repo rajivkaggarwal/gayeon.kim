@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="en-gb"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>My Bedroom - Gayeon.kim</title><meta name="description" content="Click on an object in the bedroom to investigate... ▼ /* --- GAME BOARD SETUP --- */ .game-wrapper { position: relative; width: 100%; max-width: 1000px; margin: 0 auto; overflow: hidden; background-color: #1a1a1a; } .game-bg { width: 100%; height: auto; display: block; } /* --- HITBOXES&hellip;"><meta name="generator" content="Publii Open-Source CMS for Static Site"><link rel="canonical" href="https://rajivkaggarwal.github.io/gayeon.kim/room2/"><link rel="alternate" type="application/atom+xml" href="https://rajivkaggarwal.github.io/gayeon.kim/feed.xml" title="Gayeon.kim - RSS"><link rel="alternate" type="application/json" href="https://rajivkaggarwal.github.io/gayeon.kim/feed.json" title="Gayeon.kim - JSON"><meta property="og:title" content="My Bedroom"><meta property="og:site_name" content="Gayeon.kim"><meta property="og:description" content="Click on an object in the bedroom to investigate... ▼ /* --- GAME BOARD SETUP --- */ .game-wrapper { position: relative; width: 100%; max-width: 1000px; margin: 0 auto; overflow: hidden; background-color: #1a1a1a; } .game-bg { width: 100%; height: auto; display: block; } /* --- HITBOXES&hellip;"><meta property="og:url" content="https://rajivkaggarwal.github.io/gayeon.kim/room2/index.html"><meta property="og:type" content="article"><link rel="stylesheet" href="https://rajivkaggarwal.github.io/gayeon.kim/assets/css/style.css?v=a0ba884548820066dfadd8416036abba"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://rajivkaggarwal.github.io/gayeon.kim/room2/index.html"},"headline":"My Bedroom","datePublished":"2026-06-08T18:50-04:00","dateModified":"2026-06-08T19:25-04:00","description":"Click on an object in the bedroom to investigate... ▼ /* --- GAME BOARD SETUP --- */ .game-wrapper { position: relative; width: 100%; max-width: 1000px; margin: 0 auto; overflow: hidden; background-color: #1a1a1a; } .game-bg { width: 100%; height: auto; display: block; } /* --- HITBOXES&hellip;","author":{"@type":"Person","name":"Rajiv","url":"https://rajivkaggarwal.github.io/gayeon.kim/authors/rajiv/"},"publisher":{"@type":"Organization","name":"Rajiv"}}</script><noscript><style>img[loading] {
+                    opacity: 1;
+                }</style></noscript><script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script><script src="https://unpkg.com/@c-frame/aframe-particle-system-component@1.2.x/dist/aframe-particle-system-component.min.js"></script><script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.5.0/dist/aframe-extras.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fern-solutions/aframe-sky-background/dist/sky-background.umd.min.js"></script></head><body class="page-template"><header class="top js-header"><a class="logo" href="https://rajivkaggarwal.github.io/gayeon.kim/index.html">Gayeon.kim</a></header><main class="page"><article class="content"><div class="hero hero--noimage"><header class="hero__content"><div class="wrapper"><h1>My Bedroom</h1></div></header></div><div class="entry-wrapper content__entry"><div><div class="game-wrapper"><img loading="lazy" src="https://i.postimg.cc/TP1Yb7nJ/Screenshot-2026-06-08-at-5-23-31-PM.png" alt="Game Scene" class="game-bg" data-is-external-image="true"><div id="click-overlay" onclick="advanceDialogue()"></div><div id="image-popup-container"><img loading="lazy" id="popup-image" src="" alt="Popup Clue" data-is-external-image="true"></div><button class="hitbox obj-bed" onclick="startInteraction('bed')"></button> <button class="hitbox obj-window" onclick="startInteraction('window')"></button> <button class="hitbox obj-headphones" onclick="startInteraction('headphones')"></button> <button class="hitbox obj-desk" onclick="startInteraction('desk')"></button> <button class="hitbox obj-lamp" onclick="startInteraction('lamp')"></button> <button class="hitbox obj-palette" onclick="startInteraction('palette')"></button></div><div class="game-textbox" onclick="advanceDialogue()"><p id="dialogue-display">Click on an object in the bedroom to investigate...</p><span id="click-prompt">▼</span></div><style>/* --- GAME BOARD SETUP --- */
+.game-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #1a1a1a;
+}
+
+.game-bg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- HITBOXES --- */
+.hitbox {
+    position: absolute;
+    background: rgba(255, 0, 0, 0.2); /* Tinted for editing; change 0.2 to 0.0 to hide completely */
+    border: 2px dashed #ff0000;      /* Remove this line when your game is finished! */
+    cursor: pointer;
+    box-sizing: border-box;
+    z-index: 2;
+}
+.hitbox:hover {
+    background: rgba(255, 0, 0, 0.4);
+}
+
+/* Hitbox Coordinates */
+.obj-bed { top: 38%; left: 0%; width: 19%; height: 55%; }
+.obj-window { top: 0%; left: 23%; width: 25%; height: 38%; }
+.obj-headphones { top: 40%; left: 40%; width: 10%; height: 9%; }
+.obj-desk { top: 38%; left: 31%; width: 50%; height: 40%; }
+.obj-lamp { top: 15%; left: 75%; width: 13%; height: 37%; }
+.obj-palette { top: 57%; left: 88%; width: 11%; height: 12%; }
+
+/* --- DIALOGUE OVERLAY (The Magic Multi-click Shield) --- */
+#click-overlay {
+    display: none; /* Hidden by default, turns on during dialogue */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5; /* Sits above hitboxes so you can't click other items mid-story */
+    cursor: pointer;
+}
+
+/* --- IMAGE POPUP CONTAINER --- */
+#image-popup-container {
+    display: none; /* Hidden until a script triggers it */
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    width: 50%;
+    height: 60%;
+    z-index: 6; /* Appears above the click overlay */
+    background: rgba(0,0,0,0.8);
+    border: 3px solid #3b82f6;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+#popup-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* --- TEXTBOX STYLING --- */
+.game-textbox {
+    position: relative;
+    margin: 20px auto;
+    width: 90%; 
+    max-width: 1000px;
+    background: rgba(21, 21, 21, 0.95); 
+    border-left: 5px solid #3b82f6;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    min-height: 80px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+#click-prompt {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    color: #3b82f6;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}</style><script>// 1. GAME SCRIPT DATA 
+// This stores all your scenes. You can add text lines or image paths here!
+const gameData = {
+    headphones: [
+        { type: "text", content: "I forgot to put this away..." },
+        { type: "text", content: "I love volleyball!" },
+        { type: "image", content: "https://placehold.co/600x400?text=Your+Volleyball+Image+Here" }, // Replace with your uploaded URL later
+        { type: "text", content: "Alright, back to looking around." }
+    ],
+    bed: [
+        { type: "text", content: "The bed is totally unmade." },
+        { type: "text", content: "There's a stray notebook under the pillow." }
+    ],
+    window: [
+        { type: "text", content: "Looking out the window..." },
+        { type: "text", content: "The weather outside looks gloomy." }
+    ],
+    desk: [
+        { type: "text", content: "A typical messy study desk." }
+    ],
+    lamp: [
+        { type: "text", content: "The lamp is blindingly bright." }
+    ],
+    palette: [
+        { type: "text", content: "Dried paint coats the wooden board." }
+    ]
+};
+
+// 2. GAME STATE TRACKERS
+let currentObject = null;
+let currentStep = 0;
+
+// 3. START AN INTERACTION (When clicking an object hitbox)
+function startInteraction(objectKey) {
+    currentObject = objectKey;
+    currentStep = 0;
+    
+    // Turn on the giant transparent click shield so player can't click other items
+    document.getElementById("click-overlay").style.display = "block";
+    document.getElementById("click-prompt").style.display = "inline";
+    
+    // Play the very first line
+    renderStep();
+}
+
+// 4. DISPLAY THE CURRENT STEP
+function renderStep() {
+    const steps = gameData[currentObject];
+    
+    // Check if we ran out of steps for this object
+    if (currentStep >= steps.length) {
+        endInteraction();
+        return;
+    }
+    
+    const currentData = steps[currentStep];
+    
+    if (currentData.type === "text") {
+        // Hide image popup if it was open from a previous step
+        document.getElementById("image-popup-container").style.display = "none";
+        
+        // Show text line
+        document.getElementById("dialogue-display").innerText = currentData.content;
+    } 
+    else if (currentData.type === "image") {
+        // Load the image link and show the popup container
+        document.getElementById("popup-image").src = currentData.content;
+        document.getElementById("image-popup-container").style.display = "block";
+        
+        // Give optional context text under/inside the box if you want
+        document.getElementById("dialogue-display").innerText = "[You found a clue!]";
+    }
+}
+
+// 5. ADVANCE THE DIALOGUE (When clicking anywhere during a scene)
+function advanceDialogue() {
+    if (!currentObject) return; // Do nothing if a scene isn't active
+    
+    currentStep++;
+    renderStep();
+}
+
+// 6. END INTERACTION (Resets to main exploration state)
+function endInteraction() {
+    currentObject = null;
+    currentStep = 0;
+    
+    // Hide everything that was locked during the scene
+    document.getElementById("click-overlay").style.display = "none";
+    document.getElementById("image-popup-container").style.display = "none";
+    document.getElementById("click-prompt").style.display = "none";
+    
+    // Reset standard text box instruction
+    document.getElementById("dialogue-display").innerText = "Click on an object in the bedroom to investigate...";
+}</script></div></div></article></main><footer class="footer"><div class="wrapper"><div class="footer__copyright">Powered by Publii</div><button id="backToTop" class="footer__bttop" aria-label="Back to top" title="Back to top"><svg width="20" height="20"><use xlink:href="https://rajivkaggarwal.github.io/gayeon.kim/assets/svg/svg-map.svg#toparrow"/></svg></button></div></footer><script defer="defer" src="https://rajivkaggarwal.github.io/gayeon.kim/assets/js/scripts.min.js?v=dafec4f87fead6718cb125f0b0fc8441"></script><script>window.publiiThemeMenuConfig={mobileMenuMode:'sidebar',animationSpeed:300,submenuWidth: 'auto',doubleClickTime:500,mobileMenuExpandableSubmenus:true,relatedContainerForOverlayMenuSelector:'.top'};</script><script>var images = document.querySelectorAll('img[loading]');
+        for (var i = 0; i < images.length; i++) {
+            if (images[i].complete) {
+                images[i].classList.add('is-loaded');
+            } else {
+                images[i].addEventListener('load', function () {
+                    this.classList.add('is-loaded');
+                }, false);
+            }
+        }</script></body></html>
